@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?php // echo $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'precio') ?>
 
@@ -25,9 +25,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'lavavajillas')->checkbox() ?>
 
-    <?php // echo $form->field($model, 'garaje')->checkbox() ?>
+    <?= $form->field($model, 'garaje')->checkbox() ?>
 
-    <?php // echo $form->field($model, 'trastero')->checkbox() ?>
+    <?= $form->field($model, 'trastero')->checkbox() ?>
 
     <?php // echo $form->field($model, 'propietario_id') ?>
 
