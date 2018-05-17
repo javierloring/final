@@ -13,12 +13,15 @@ class InmueblesSearch extends Inmuebles
     public $precio_max;
     public $precio_min;
 
-    public function attributeLabel()
+    public function attributes()
     {
-        return [
-            'precio_max' => 'Precio máximo',
-            'precio_min' => 'Precio mínimo',
-        ];
+        return array_merge(
+            parent::attributes(),
+            [
+            'precio_max',
+            'precio_min',
+            ]
+        );
     }
 
     /**
@@ -70,10 +73,10 @@ class InmueblesSearch extends Inmuebles
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'precio' => $this->precio,
-            'num_hab' => $this->num_hab,
-            'num_banos' => $this->num_banos,
+            // 'id' => $this->id,
+            // 'precio' => $this->precio,
+            // 'num_hab' => $this->num_hab,
+            // 'num_banos' => $this->num_banos,
             'lavavajillas' => $this->lavavajillas,
             'garaje' => $this->garaje,
             'trastero' => $this->trastero,
@@ -86,6 +89,14 @@ class InmueblesSearch extends Inmuebles
 
         $query->andFilterWhere(
             ['<=', 'precio', $this->precio_max]
+        );
+
+        $query->andFilterWhere(
+            ['>=', 'num_hab', $this->num_hab]
+        );
+
+        $query->andFilterWhere(
+            ['>=', 'num_banos', $this->num_banos]
         );
 
         return $dataProvider;
