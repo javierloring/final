@@ -6,6 +6,9 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\InmueblesSearch */
 /* @var $form yii\widgets\ActiveForm */
+
+$lista = ['' => '', 0 => 'NO', 1 => 'SI'];
+
 ?>
 
 
@@ -28,11 +31,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'num_banos') ?>
 
-    <?= $form->field($model, 'lavavajillas')->checkbox() ?>
+    <?= $form->field($model, 'lavavajillas')->dropDownList($lista) ?>
 
-    <?= $form->field($model, 'garaje')->checkbox() ?>
+    <?= $form->field($model, 'garaje')->dropDownList($lista) ?>
 
-    <?= $form->field($model, 'trastero')->checkbox() ?>
+    <?= $form->field($model, 'trastero')->dropDownList($lista) ?>
 
     <?php // echo $form->field($model, 'propietario_id') ?>
 

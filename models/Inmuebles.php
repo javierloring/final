@@ -49,8 +49,8 @@ class Inmuebles extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'precio' => 'Precio',
-            'num_hab' => 'Num Hab',
-            'num_banos' => 'Num Banos',
+            'num_hab' => 'Num Habitaciones',
+            'num_banos' => 'Num Baños',
             'lavavajillas' => 'Lavavajillas',
             'garaje' => 'Garaje',
             'trastero' => 'Trastero',
