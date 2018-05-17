@@ -17,7 +17,11 @@ use yii\widgets\ActiveForm;
 
     <?php //echo $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'precio') ?>
+    <!-- <?= $form->field($model, 'precio') ?> -->
+
+    <?= $form->field($model, 'precio_min') ?>
+
+    <?= $form->field($model, 'precio_max') ?>
 
     <?= $form->field($model, 'num_hab') ?>
 

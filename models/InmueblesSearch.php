@@ -27,9 +27,10 @@ class InmueblesSearch extends Inmuebles
     public function rules()
     {
         return [
-            [['id', 'propietario_id', 'precio_max', 'precio_min'], 'integer'],
+            [['id', 'propietario_id'], 'integer'],
             [['precio', 'num_hab', 'num_banos'], 'number'],
             [['lavavajillas', 'garaje', 'trastero'], 'boolean'],
+            [['precio_max', 'precio_min'], 'number'],
         ];
     }
 
@@ -80,11 +81,11 @@ class InmueblesSearch extends Inmuebles
         ]);
 
         $query->andFilterWhere(
-            ['>=', 'precio' => $this->precio, 'precio_min' => $this->precio_min]
+            ['>=', 'precio', $this->precio_min]
         );
 
         $query->andFilterWhere(
-            ['<=', 'precio' => $this->precio, 'precio_max' => $this->precio_max]
+            ['<=', 'precio', $this->precio_max]
         );
 
         return $dataProvider;
