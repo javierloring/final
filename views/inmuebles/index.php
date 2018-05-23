@@ -45,7 +45,7 @@ $this->registerJs($js);
             [
                 'attribute' => 'propietario.telefono',
                 'content' => function($model, $key, $index, $column){
-                    return '<span class="telefono" style:"dispaly: none;">'
+                    return '<span class="telefono" style="display: none">'
                     . $model->propietario->telefono
                     . '</span>';
                 },
